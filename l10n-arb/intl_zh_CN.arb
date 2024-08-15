@@ -1,0 +1,102 @@
+{
+  "@@last_modified": "2018-12-10T15:46:20.897228",
+  "@@locale":"zh_CN",
+  "title": "Flutter APP",
+  "@title": {
+    "description": "Title for the Demo application",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "theme": "主题色",
+  "@theme": {
+    "description": "theme",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "home": "首页",
+  "@home": {
+    "description": "Home",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "login": "登录",
+  "@login": {
+    "description": "login in",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "language": "语言",
+  "@language": {
+    "description": "language",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "auto": "自定义",
+  "@auto": {
+    "description": "auto",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "userName": "用户名",
+  "@userName": {
+    "description": "userName",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "userNameRequired": "请输入用户名",
+  "@userNameRequired": {
+    "description": "userNameRequired",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "password": "密码",
+  "@password": {
+    "description": "password",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "passwordRequired": "请输入密码",
+  "@passwordRequired": {
+    "description": "passwordRequired",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "logout": "退出",
+  "@logout": {
+    "description": "logout",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "logoutTip": "logoutTip",
+  "@logoutTip": {
+    "description": "logoutTip",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "cancel": "取消",
+  "@cancel": {
+    "description": "cancel",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "yes": "确认",
+  "@yes": {
+    "description": "yes",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  }
+}

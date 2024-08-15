@@ -1,0 +1,102 @@
+{
+  "@@last_modified": "2018-12-10T15:46:20.897228",
+  "@@locale":"en_US",
+  "title": "Flutter APP",
+  "@title": {
+    "description": "Title for the Demo application",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "theme": "Theme",
+  "@theme": {
+    "description": "theme",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Home",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "login": "login",
+  "@login": {
+    "description": "login in",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "language": "Language",
+  "@language": {
+    "description": "language",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "auto": "auto",
+  "@auto": {
+    "description": "auto",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "userName": "userName",
+  "@userName": {
+    "description": "userName",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "userNameRequired": "userNameRequired",
+  "@userNameRequired": {
+    "description": "userNameRequired",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "password": "password",
+  "@password": {
+    "description": "password",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "passwordRequired": "passwordRequired",
+  "@passwordRequired": {
+    "description": "passwordRequired",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "logout": "logout",
+  "@logout": {
+    "description": "logout",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "logoutTip": "logoutTip",
+  "@logoutTip": {
+    "description": "logoutTip",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "cancel": "cancel",
+  "@cancel": {
+    "description": "cancel",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  },
+  "yes": "yes",
+  "@yes": {
+    "description": "yes",
+    "type": "text",
+    "placeholders_order": [],
+    "placeholders": {}
+  }
+}
