@@ -2,11 +2,11 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'package:dio/dio.dart';
+import 'package:dio/io.dart';
 import 'package:flutter/material.dart';
 import 'package:github_client_app/common/global.dart';
 import 'package:github_client_app/models/repo.dart';
 import 'package:github_client_app/models/user.dart';
-export 'package:dio/dio.dart' show DioError;
 
 class Git {
   // 在网络请求过程中可能会需要使用当前的context信息，比如在请求失败时
@@ -17,7 +17,8 @@ class Git {
 
   BuildContext? context;
   late Options _options;
-  static Dio dio = new Dio(BaseOptions(
+
+  static Dio dio = Dio(BaseOptions(
     baseUrl: 'https://api.github.com/',
     headers: {
       HttpHeaders.acceptHeader: "application/vnd.github.squirrel-girl-preview,"
@@ -33,6 +34,16 @@ class Git {
 
     // 在调试模式下需要抓包调试，所以我们使用代理，并禁用HTTPS证书校验
     if (!Global.isRelease) {
+      // 新版本 - 没有尝试出来
+      // dio.httpClientAdapter = IOHttpClientAdapter(createHttpClient: () {
+      //   // Don't trust any certificate just because their root cert is trusted.
+      //   final HttpClient client =
+      //       HttpClient(context: SecurityContext(withTrustedRoots: false));
+      //   // You can test the intermediate / root cert here. We just ignore it.
+      //   client.badCertificateCallback = (cert, host, port) => true;
+      //   return client;
+      // });
+      // 旧版本
       // (dio.httpClientAdapter as DefautpClientAdapter).onHttpClientCreate =
       //     (client) {
       //   // client.findProxy = (uri) {
@@ -47,7 +58,7 @@ class Git {
 
   // 登录接口，登录成功后返回用户信息
   Future<User> login(String login, String pwd) async {
-    String basic = 'Basic ' + base64.encode(utf8.encode('$login:$pwd'));
+    String basic = 'Basic ${base64.encode(utf8.encode('$login:$pwd'))}';
     var r = await dio.get(
       "/user",
       options: _options.copyWith(headers: {

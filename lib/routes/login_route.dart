@@ -15,8 +15,8 @@ class LoginRoute extends StatefulWidget {
 }
 
 class _LoginRouteState extends State<LoginRoute> {
-  final TextEditingController _unameController = TextEditingController();
-  final TextEditingController _pwdController = TextEditingController();
+  final TextEditingController _unameController = TextEditingController(text: '1123395547@qq.com');
+  final TextEditingController _pwdController = TextEditingController(text: 'Chrome1234..');
   bool pwdShow = false;
   final GlobalKey _formKey = GlobalKey<FormState>();
   bool _nameAutoFocus = true;
@@ -24,7 +24,7 @@ class _LoginRouteState extends State<LoginRoute> {
   @override
   void initState() {
     // 自动填充上次登录的用户名，填充后将焦点定位到密码输入框
-    _unameController.text = Global.profile.lastLogin ?? "";
+    _unameController.text = Global.profile.lastLogin ?? '1123395547@qq.com';
     if (_unameController.text.isNotEmpty) {
       _nameAutoFocus = false;
     }
@@ -101,23 +101,23 @@ class _LoginRouteState extends State<LoginRoute> {
     if ((_formKey.currentState as FormState).validate()) {
       // showLoading(context);
       User? user;
-      // try {
+      try {
         user = await Git(context)
             .login(_unameController.text, _pwdController.text);
         // 因为登录页返回后，首页会build，所以我们传入false，这样更新user后便不触发更新。
         print("user::${user.toJson()}");
         // Provider.of<UserModel>(context, listen: false).user = user;
-      // } on DioError catch( e) {
-      //   //登录失败则提示
-      //   if (e.response?.statusCode == 401) {
-      //     showToast(GmLocalizations.of(context).userNameOrPasswordWrong);
-      //   } else {
-      //     showToast(e.toString());
-      //   }
-      // } finally {
-      //   // 隐藏loading框
-      //   Navigator.of(context).pop();
-      // }
+      } on DioException  catch( e) {
+        //登录失败则提示
+        if (e.response?.statusCode == 401) {
+          // showToast(GmLocalizations.of(context).userNameOrPasswordWrong);
+        } else {
+          // showToast(e.toString());
+        }
+      } finally {
+        // 隐藏loading框
+        Navigator.of(context).pop();
+      }
       //登录成功则返回
       if (user != null) {
         Navigator.of(context).pop();

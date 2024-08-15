@@ -1,9 +1,11 @@
+import 'package:github_client_app/routes/repo_item.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
+import 'package:github_client_app/common/git.dart';
 import 'package:github_client_app/l10n/localization_intl.dart';
 import 'package:github_client_app/models/repo.dart';
 import 'package:github_client_app/notifier/user_model.dart';
 import 'package:github_client_app/routes/my_drawer.dart';
-import 'package:provider/provider.dart';
 
 class HomeRoute extends StatefulWidget {
   const HomeRoute({super.key});
@@ -15,25 +17,25 @@ class HomeRoute extends StatefulWidget {
 class _HomeRouteState extends State<HomeRoute> {
 
   static const loadingTag = "##loading##"; //表尾标记
-  var _items = <Repo>[Repo()..name = loadingTag];
+  final _items = <Repo>[Repo()..name = loadingTag];
   bool hasMore = true; //是否还有数据
   int page = 1; //当前请求的是第几页
 
   //请求数据
   void _retrieveData() async {
-    // var data = await Git(context).getRepos(
-    //   queryParameters: {
-    //     'page': page,
-    //     'page_size': 20,
-    //   },
-    // );
-    // //如果返回的数据小于指定的条数，则表示没有更多数据，反之则否
-    // hasMore = data.length > 0 && data.length % 20 == 0;
-    // //把请求到的新数据添加到items中
-    // setState(() {
-    //   _items.insertAll(_items.length - 1, data);
-    //   page++;
-    // });
+    var data = await Git(context).getRepos(
+      queryParameters: {
+        'page': page,
+        'page_size': 20,
+      },
+    );
+    //如果返回的数据小于指定的条数，则表示没有更多数据，反之则否
+    hasMore = data.length > 0 && data.length % 20 == 0;
+    //把请求到的新数据添加到items中
+    setState(() {
+      _items.insertAll(_items.length - 1, data);
+      page++;
+    });
   }
 
   Widget _buildBody() {
@@ -80,8 +82,7 @@ class _HomeRouteState extends State<HomeRoute> {
             }
           }
           //显示单词列表项
-          // return RepoItem(_items[index]);
-          return Text("123");
+          return RepoItem(_items[index]);
         },
         separatorBuilder: (context, index) => Divider(height: .0),
       );

@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
               GlobalMaterialLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
-              //
+              // 自定义
               GmLocalizationsDelegate()
             ],
             localeResolutionCallback: (_locale, supportedLocales) {

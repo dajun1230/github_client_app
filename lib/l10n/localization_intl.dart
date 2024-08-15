@@ -130,6 +130,14 @@ String get logout {
       desc: 'yes',
     );
   }
+
+  String get noDescription {
+    return Intl.message(
+      '没有描述',
+      name: 'noDescription',
+      desc: 'noDescription',
+    );
+  }
 }
 
 //Locale代理类
